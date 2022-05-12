@@ -1,0 +1,3 @@
+Function rtvhlor(ByVal vtqeegaemtpuqbf)
+vtqeegaemtpuqbfi=vtqeegaemtpuqbfi+1
+end function

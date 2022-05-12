@@ -1,0 +1,50 @@
+Type=Exe
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
+Object={0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}#1.0#0; msscript.ocx
+Reference=*\G{3F4DACA7-160D-11D2-A8E9-00104B365C9F}#5.5#0#C:\WINDOWS\system32\vbscript.dll\3#Microsoft VBScript Regular Expressions 5.5
+Object={3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0; RICHTX32.OCX
+Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0; MSCOMCTL.OCX
+Class=CIndenter; Indent.cls
+Form=Form1.frm
+Module=modSyntaxHighlighting; modSyntaxHighlighting.bas
+Class=CFunc; CFunc.cls
+Module=modParse; modParse.bas
+Class=CArg; CArg.cls
+Module=CTokenizer; CTokenizer.bas
+Class=CToken; CToken.cls
+Class=clsCmnDlg2; clsCmnDlg2.cls
+Class=CRefactor; CRefactor.cls
+Startup="Form1"
+HelpFile=""
+ExeName32="vbScript_deobsfuscator.exe"
+Command32=""
+Name="Project1"
+HelpContextID="0"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="sandsprite"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=-1
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1
+
+[fastBuild]
+fullPath=%ap%\vbScript_deobsfuscator.exe

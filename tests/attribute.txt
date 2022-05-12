@@ -1,0 +1,2 @@
+Attribute VB_Name = "ReisaWtkGEK2g"
+Private Const rEITLfHwWDKjXJN As Long = 8748

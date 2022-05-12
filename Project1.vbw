@@ -1,0 +1,10 @@
+CIndenter = 44, 44, 684, 623, C
+Form1 = 159, 31, 1257, 949, , 24, 13, 1084, 810, C
+modSyntaxHighlighting = 61, 43, 598, 592, C
+CFunc = 66, 66, 765, 728, 
+modParse = 65, 37, 761, 777, C
+CArg = 66, 66, 657, 608, 
+CTokenizer = 64, 83, 714, 816, 
+CToken = 154, 154, 670, 778, 
+clsCmnDlg2 = 242, 242, 752, 908, C
+CRefactor = 154, 154, 763, 687, 

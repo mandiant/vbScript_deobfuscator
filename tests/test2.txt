@@ -1,0 +1,4 @@
+Function rtvhlor( ByVal vtqeegaemtpuqbf)
+end function
+
+gvar_11 = rtvhlor("test")

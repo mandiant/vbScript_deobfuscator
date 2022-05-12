@@ -1,0 +1,101 @@
+option explicit:  :function OBJNAME(z14851c4b0f):z14851c4b0f=z14851c4b0f&"":OBJNAME=z14851c4b0f: _
+end function:Dim z46d942ada2:Dim z702cea96f0:Dim za46aa47f3e:Dim zf326326684:Dim _
+ z27005b7a98:Dim z480be6922c:Dim z99483bbe5a:Dim zbac279de45:Dim zd825e25ad5:Dim _
+ z77592bc850:zbac279de45=Array((&he1d+5202-&H226f),(&he64+2696-&H18cd), _
+(&h1d45+331-&H1e74),(&hf34+780-&H1221),(&h1316+3660-&H2144),(&h6c0+4889-&H19ba), _
+(&h14c5+2208-&H1d47),(&hbf1+1946-&H136c),(&hbbd+776-&Hea6),(&h9a1+7392-&H2663), _
+(&he4f+5205-&H2285),(&h1b31+83-&H1b66),(&heab+113-&Hefd)):zd825e25ad5=Array( _
+(&h228a+803-&H25ad),(&h4de+7853-&H236c),(&hcb+6155-&H18b9),(&hfe2+540-&H11df), _
+(&hdc5+1812-&H14bb),(&h3ce+5375-&H18ae),(&h403+5512-&H196d),(&h4fe+3546-&H12b9), _
+(&h931+6457-&H224b),(&h1199+3076-&H1d7f),(&h8ca+2227-&H115e),(&h17c+1634-&H7c0), _
+(&h172e+2070-&H1f25)):z77592bc850=Array("","January","February","March","April", _
+"May","June","July","August","September","October","November","December"): _
+Private Sub StartCalendar(zb9b4ee1e46):Set za46aa47f3e=zb9b4ee1e46:zf326326684= _
+DatePart("m",Date):z27005b7a98=DatePart("yyyy",Date):z99483bbe5a=DatePart("w", _
+Date):z480be6922c=z5432fa9477():ze8c4fa6420:End Sub:Public Sub ze8c4fa6420():Set _
+ z46d942ada2=Window.Open("","Calendar", _
+"width=275,height=205,status=no,resizable=no,top=200,left=200"):zf71078d0b9:End  _
+Sub:Public Sub za44378e4e2():z46d942ada2.Document.Write "":z46d942ada2.Document. _
+Close:ze8c4fa6420():End Sub:Private Sub zf71078d0b9:z3aa9a20d50  _
+"<html><head><title>Merced County Calendar</title>"&vbCrlf:z3aa9a20d50 "<style>" _
+:z3aa9a20d50 "TD {":z3aa9a20d50 "  background-color: #888888;":z3aa9a20d50  _
+"  font: 8pt Verdana;":z3aa9a20d50 "  color: #FFFFFF;":z3aa9a20d50  _
+"  text-decoration: None;":z3aa9a20d50 "}":z3aa9a20d50 "BODY {":z3aa9a20d50  _
+"  background-color: Black;":z3aa9a20d50 "  color: #AAAAAA;":z3aa9a20d50  _
+"  font: 8pt Verdana;":z3aa9a20d50 "}":z3aa9a20d50 "A {":z3aa9a20d50  _
+"  color: #FFFFFF;":z3aa9a20d50 "  font: 8pt Verdana;":z3aa9a20d50  _
+"  cursor: hand;":z3aa9a20d50 "  text-decoration: None;":z3aa9a20d50 "}": _
+z3aa9a20d50 "TD.Titles {":z3aa9a20d50 "  font: 10pt Verdana;":z3aa9a20d50  _
+"  text-align: center;":z3aa9a20d50 "  color: #000000;":z3aa9a20d50  _
+"  background-color: #e0e0e0;":z3aa9a20d50 "  font-weight: Bold;":z3aa9a20d50  _
+"}":z3aa9a20d50 "</style>":z3f3da32a80:End Sub:Public Sub z3f3da32a80(): _
+z3aa9a20d50 "<body>":z3aa9a20d50  _
+"<div align=""center"" style=""font: 10pt Verdana;"">":z3aa9a20d50  _
+"<a onClick=""window.opener."&"z004751ab46"&"()""><<</a>&nbsp;&nbsp;&nbsp;": _
+z3aa9a20d50 "<a onClick=""window.opener."&"zeda1f8d5d2"& _
+"()""><</a>&nbsp;&nbsp;&nbsp;":z3aa9a20d50 "<b>"&z77592bc850(zf326326684)&", "& _
+z27005b7a98&"</b>&nbsp;&nbsp;&nbsp;":z3aa9a20d50 "<a onClick=""window.opener."& _
+"z07249a2371"&"()"">></a>&nbsp;&nbsp;&nbsp;":z3aa9a20d50  _
+"<a onClick=""window.opener."&"z39dd568c55"&"()"">>></a>":z3aa9a20d50 "</div>": _
+z3aa9a20d50 "<table width=""100%"" align=""center"" bgcolor=""White"">": _
+z3aa9a20d50 "<tr>":z3aa9a20d50 "<td width=""14%"" class=""Titles"">Sun</td>": _
+z3aa9a20d50 "<td width=""14%"" class=""Titles"">Mon</td>":z3aa9a20d50  _
+"<td width=""14%"" class=""Titles"">Tue</td>":z3aa9a20d50  _
+"<td width=""14%"" class=""Titles"">Wed</td>":z3aa9a20d50  _
+"<td width=""14%"" class=""Titles"">Thu</td>":z3aa9a20d50  _
+"<td width=""14%"" class=""Titles"">Fri</td>":z3aa9a20d50  _
+"<td width=""14%"" class=""Titles"">Sat</td>":z3aa9a20d50 "</tr>":z72eb6574ae: _
+z3aa9a20d50 "</table>":z3aa9a20d50  _
+"<br><br><br><br><div align=""center""><a onClick=""window.opener."& _
+"z3329df96de"&"()"">Help</a></div>":z3aa9a20d50 "</body></html>":End Sub:Private _
+ Sub z72eb6574ae():Dim zdb1b67612f,z2e94873d68:If(zacae73b69d(zf326326684, _
+z27005b7a98)<=(&h669+4527-&H1818))Then:Exit Sub:End If:For z2e94873d68= _
+(&hb49+5448-&H2090) to z5432fa9477()-(&h434+4638-&H1651):z3aa9a20d50  _
+"<td width=""14%"">&nbsp;</td>":Next:For zdb1b67612f=(&h921+7093-&H24d5) To( _
+zacae73b69d(zf326326684,z27005b7a98)):If((z2e94873d68=(&h1544+2766-&H200b))OR( _
+z2e94873d68=(&h1703+2376-&H204a)))Then:z3aa9a20d50  _
+"<td width=""14%"" style=""color: #AAAAAA;""><a onclick=""vbScript:Window.opener." _
+&"zf5e813d5b0"&"("&zdb1b67612f&")"">"&zdb1b67612f&"</a></td>":If(z2e94873d68= _
+(&h3f+1587-&H66b))Then:z3aa9a20d50 "</tr><tr>":z2e94873d68=(&h13e8+2808-&H1edf): _
+Else:z2e94873d68=z2e94873d68+(&h148f+2411-&H1df9):End If:Else:z3aa9a20d50  _
+"<td width=""14%""><a onclick=""vbScript:Window.opener."&"zf5e813d5b0"&"("& _
+zdb1b67612f&")"">"&zdb1b67612f&"</a></td>":z2e94873d68=z2e94873d68+ _
+(&hf84+5131-&H238e):End If:Next:z3aa9a20d50 "</tr>":End Sub:Public Sub  _
+z3aa9a20d50(z718d5a466b):z46d942ada2.Document.Write z718d5a466b&vbCrlf:End Sub: _
+Public Sub zf5e813d5b0(z20d5612395):Window.za46aa47f3e.Value=CStr(zf326326684& _
+"/"&z20d5612395&"/"&z27005b7a98):z46d942ada2.Close:End Sub:Public Function  _
+z5432fa9477():z5432fa9477=DatePart("w",CDate(zf326326684&"/1/"&z27005b7a98)):End _
+ Function:Public Function zacae73b69d(z88c3293bcc,zd8e70f6ef2):If((zd8e70f6ef2  _
+MOD (&h1c9e+2123-&H24e5))=(&h1712+3361-&H2433))Then:If(((zd8e70f6ef2 MOD  _
+(&hf50+5362-&H23de))=(&hba2+5014-&H1f38))AND((zd8e70f6ef2 MOD  _
+(&h1956+3372-&H24f2))<>(&he75+5764-&H24f9)))Then:zacae73b69d=zbac279de45( _
+z88c3293bcc):Else:zacae73b69d=zd825e25ad5(z88c3293bcc):End If:Else:zacae73b69d= _
+zbac279de45(z88c3293bcc):End If:End Function:Public Sub z004751ab46(): _
+z27005b7a98=z27005b7a98-(&h198d+3229-&H2629):z480be6922c=z5432fa9477():Call  _
+za44378e4e2:End Sub:Public Sub zeda1f8d5d2():If(zf326326684=(&h3c6+8862-&H2663)) _
+Then:z27005b7a98=z27005b7a98-(&h8c0+1433-&He58):zf326326684=(&hd68+5431-&H2293): _
+Else:zf326326684=zf326326684-(&h93b+3693-&H17a7):End If:z480be6922c=z5432fa9477( _
+):Call za44378e4e2:End Sub:Public Sub z39dd568c55():z27005b7a98=z27005b7a98+ _
+(&hacc+2982-&H1671):z480be6922c=z5432fa9477():Call za44378e4e2():End Sub:Public  _
+Sub z07249a2371():If(zf326326684=(&ha98+6282-&H2316))Then:z27005b7a98= _
+z27005b7a98+(&h91a+6187-&H2144):zf326326684=(&h9ae+3567-&H179c):Else:zf326326684 _
+=zf326326684+(&h1726+2123-&H1f70):End If:z480be6922c=z5432fa9477():Call  _
+za44378e4e2:End Sub:Public Sub z3329df96de():Set z702cea96f0=Window.Open("", _
+"Help","width=275,height=250,status=no,resizable=no,top=200,left=485"):With  _
+z702cea96f0.Document:.Write "<html><head><title>Calendar Help</title></head>"& _
+vbCrlf:.Write "<style>"&vbCrlf:.Write "BODY {"&vbCrlf:.Write  _
+"  font: 8pt Verdana;"&vbCrlf:.Write "  color: #e0e0e0;"&vbCrlf:.Write  _
+"  background-color: #000000;"&vbCrlf:.Write "}"&vbCrlf:.Write "</style>"&vbCrlf _
+:.Write "<body>"&vbCrlf:.Write  _
+"<div align=""center"" style=""font: 14pt Verdana;"">Calendar Help</div><hr>"& _
+vbCrlf:.Write  _
+"To find a specific date, click on the use the navigation symbols located on either side" _
+&vbCrlf:.Write  _
+"of the Month and Year.  They look like either of these: <<, <, >, or >>.<br>"& _
+vbCrlf:.Write  _
+"<< - Previous Year<br>< - Previous Month<br>> - Next Month<br>>> - Next Year<br>" _
+&vbCrlf:.Write "<br>":.Write  _
+"To select a month and place it into the date text box, just click on the date." _
+:.Write  _
+"<br><br><div align=""center""><input type=""button"" value=""Close Help"" onClick=""javascript:window.close()""></div>" _
+:.Write "</body></html>"&vbCrlf:End With:End Sub:

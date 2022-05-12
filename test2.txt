@@ -1,0 +1,7 @@
+
+'this is my:comment
+s = "this is my:string""":s=empty:msgbox s
+
+tmp=1 'this is my:comment2
+
+

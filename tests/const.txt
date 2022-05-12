@@ -1,0 +1,11 @@
+Private Const rEITLfHwWDKjXJN As Long = 8748
+public x as string 
+
+private function test() as long 
+
+end function
+
+public sub blah() as boolean
+
+end function
+

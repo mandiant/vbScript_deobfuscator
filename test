@@ -1,0 +1,157 @@
+Public Function IndentVBCode(sVBCode As String, sAllLines() As String) As String
+' #VBIDEUtils#************************************************************
+' * Programmer Name  : removed
+' * Web Site         : http://www.ppreview.net
+' * E-Mail           : removed
+' * Date             : 25/11/97
+' * Time             : 10:21
+' * Module Name      : class_Indenter
+' * Module Filename  : Indent.cls
+' * Procedure Name   : IndentVBCode
+' * Parameters       :
+' *                    sVBCode As String
+' *                    sAllLines() As String
+' **********************************************************************
+' * Comments         : Indent the VB Code passed as parameter
+' *
+' *
+' **********************************************************************
+Dim nI               As Long
+Dim nJ               As Long
+Dim nNumberLines     As Long
+Dim nTab             As Integer
+Dim sTmp             As String
+Dim nPos             As Integer
+Dim nIndent          As Byte
+Dim sTWA()           As String
+Call Main_Module.Split(sVBCode, sAllLines, vbCrLf)
+nNumberLines = UBound(sAllLines)
+ReDim sBuffer(0 To nNumberLines)
+' *** Determine number of tabs
+frmProgress.Maximum = nProgTotal * 2
+For nI = 0 To nNumberLines
+If nI Mod 50 = 0 Then frmProgress.Progress = nI
+sAllLines(nI) = Replace(sAllLines(nI), Chr$(9), "")
+Select Case BlockType(sAllLines(nI))
+Case LABELLINE:
+sBuffer(nI).nNumTabs = 0
+Case STARTBLOCK:
+For nJ = nI + 1 To nNumberLines
+sBuffer(nJ).nNumTabs = sBuffer(nJ).nNumTabs + 1
+Next
+Case NOINDENTBLOCK:
+sBuffer(nI).nNumTabs = 0
+Case MIDBLOCK:
+nTab = sBuffer(nI).nNumTabs
+For nJ = nI + 1 To nNumberLines
+sBuffer(nJ).nNumTabs = nTab
+Next
+sBuffer(nI).nNumTabs = nTab - 1
+Case CASEBLOCK:
+sBuffer(nI).nNumTabs = sBuffer(nI).nNumTabs
+For nJ = nI + 1 To nNumberLines
+sBuffer(nJ).nNumTabs = sBuffer(nJ).nNumTabs + 1
+Next
+Case ENDCASEBLOCK:
+sBuffer(nI).nNumTabs = sBuffer(nI).nNumTabs - 2
+nTab = sBuffer(nI).nNumTabs
+For nJ = nI + 1 To nNumberLines
+sBuffer(nJ).nNumTabs = nTab
+Next
+Case ENDBLOCK:
+sBuffer(nI).nNumTabs = sBuffer(nI).nNumTabs - 1
+nTab = sBuffer(nI).nNumTabs
+For nJ = nI + 1 To nNumberLines
+sBuffer(nJ).nNumTabs = nTab
+Next
+Case NOALIGNCOMMENTLOCK:
+sBuffer(nI).nNumTabs = sBuffer(nI).nNumTabs - 1
+Case UNDERSCORECHAR:
+If nI + 1 <= nNumberLines Then sBuffer(nI + 1).nNumTabs = sBuffer(nI + 1).nNumTabs + 1
+Case VARIABLELINE:
+If bIndentVariable Then
+On Error Resume Next
+nPos = InStr(LCase$(sAllLines(nI)), " as ")
+sTmp = Trim$(Left$(sAllLines(nI), nPos))
+If Left$(LCase$(sTmp), 3) = "dim" Then
+If sBuffer(nI).nNumTabs = 0 Then
+nIndent = 24
+Else
+nIndent = 21
+End If
+ElseIf Left$(LCase$(sTmp), 6) = "global" Then
+nIndent = 24
+ElseIf Left$(LCase$(sTmp), 6) = "public" Then
+nIndent = 24
+ElseIf Left$(LCase$(sTmp), 7) = "private" Then
+nIndent = 24
+End If
+If Len(sTmp) < nIndent Then
+sAllLines(nI) = PadR(sTmp, CInt(nIndent)) & Mid$(sAllLines(nI), nPos + 1)
+Else
+sAllLines(nI) = sTmp & " " & Mid$(sAllLines(nI), nPos + 1)
+End If
+On Error GoTo ERROR_IndentVBCode
+End If
+Case UNALTERED:
+If bIndentVariable Then
+On Error Resume Next
+If Right$(Trim$(sAllLines(nI)), 1) <> "_" Then
+nPos = InStr(LCase$(sAllLines(nI)), " as ")
+If nPos > 0 Then
+sTmp = Trim$(sAllLines(nI))
+sTmp = Replace(sTmp, "            ", " ")
+sTmp = Replace(sTmp, "           ", " ")
+sTmp = Replace(sTmp, "          ", " ")
+sTmp = Replace(sTmp, "         ", " ")
+sTmp = Replace(sTmp, "        ", " ")
+sTmp = Replace(sTmp, "       ", " ")
+sTmp = Replace(sTmp, "      ", " ")
+sTmp = Replace(sTmp, "     ", " ")
+sTmp = Replace(sTmp, "    ", " ")
+sTmp = Replace(sTmp, "   ", " ")
+sTmp = Replace(sTmp, "  ", " ")
+sTmp = Replace(sTmp, ",", " ")
+Call Main_Module.Split(sTmp, sTWA, " ")
+If LCase$(sTWA(2)) = "as" Then
+sTmp = Trim$(Left$(sAllLines(nI), nPos))
+nIndent = 21
+If Len(sTmp) < nIndent Then
+sAllLines(nI) = PadR(sTmp, CInt(nIndent)) & Mid$(sAllLines(nI), nPos + 1)
+Else
+sAllLines(nI) = sTmp & " " & Mid$(sAllLines(nI), nPos + 1)
+End If
+On Error GoTo ERROR_IndentVBCode
+End If
+End If
+End If
+End If
+End Select
+Next
+If bUseTabs Then nIndentSpaces = 1
+On Error GoTo ERROR_IndentVBCode
+' *** Add tabs in front of each line
+For nI = 1 To nNumberLines
+If sBuffer(nI).nNumTabs < 0 Then sBuffer(nI).nNumTabs = 0
+sAllLines(nI) = Trim$(sAllLines(nI))
+If Len(sAllLines(nI)) <> 0 Then
+' *** Remove all tabs
+Do While Asc(Left$(sAllLines(nI), 1)) = 9
+sAllLines(nI) = Right$(sAllLines(nI), Len(sAllLines(nI)) - 1)
+Loop
+sTmp = LCase$(sAllLines(nI))
+If ((sTmp = "end sub") Or (sTmp = "end function") Or (sTmp = "end property")) And (nI < nNumberLines - 1) Then
+' *** Verify if the next line is empty or not
+If Trim$(sAllLines(nI + 1)) <> "" Then sAllLines(nI) = sAllLines(nI) & vbCrLf
+End If
+sAllLines(nI) = String$(nIndentSpaces * sBuffer(nI).nNumTabs, sCharIndent) & sAllLines(nI) & vbCrLf
+Else
+sAllLines(nI) = Trim$(sAllLines(nI)) & vbCrLf
+End If
+Next
+ERROR_IndentVBCode:
+sTmp = Join(sAllLines, vbCrLf)
+IndentVBCode = Replace(sTmp, vbCrLf & vbCrLf & vbCrLf, vbCrLf & vbCrLf)
+frmProgress.Progress = frmProgress.Maximum
+Exit Function
+End Function
