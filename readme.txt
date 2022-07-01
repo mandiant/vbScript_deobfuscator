@@ -41,3 +41,6 @@ other credits:
 
 version:
  3.13 - rename 3x speed increase
+ 
+ 
+This repository is being archived, with no future work planned.
